@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+:root {
+    --main-color: #32a8a8;
+    --main-color-light: #5bc0c0;
+    --main-color-lighter: #84d8d8;
+    --main-color-dark: #288686;
+    --main-color-darker: #1e6464;
+  }
+
+body {
+    min-height: 100vh;
+    background-color: white;
+}
+
+header {
+    width: 100%; /*set to 100vh when different screen size*/
+    height: 25vh;
+    background-color: lightblue;
+}
+
+.banner {
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to left, #1e6464, #32a8a8, #5bc0c0);
+    display: flex;
+    flex-direction: row;
+}
+
+.banner-img {
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+.banner-img img {
+    margin-left: 10%;
+}
+
+.right-animation {
+    width: 70%;
+    height: 100%;
+    /*background-color: var(--main-color-light); */
+    position: relative; 
+}
+
+.circle {
+    background-color: #4f9df7;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.7;
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.anim-blue {
+    background-color: #4f9df7;
+    top: 15%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.anim-purple {
+    background-color: #b46ff1;
+    width: 40px;
+    height: 40px;
+    
+}
+
+@keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(10%) translateX(5%);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+nav {
+    width: 100%;
+    height: 5vh;
+    background: linear-gradient(to left, #1e6464, #32a8a8, #5bc0c0);
+
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul li {
+    font-size: 1.2rem;
+    height: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #288686;
+    transform: skewX(-15deg); 
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out; /*When the user unhovers, its gonna be smooth*/
+
+
+
+}
+
+nav ul li:nth-last-child(1) {
+    background-color: var(--main-color);
+}
+
+nav ul li:nth-last-child(2) {
+    background-color: var(--main-color-dark);
+}
+
+nav ul li:nth-last-child(3) {
+    background-color: var(--main-color-darker);
+}
+
+
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    transform: skewX(15deg);
+}
+nav ul li:hover {
+    background-color: var(--main-color-light);
+    transition: all 0.3s ease-in-out;
+}
+
+.mobilenav {
+    display: none;
+}
