@@ -1,3 +1,20 @@
+<?php
+    include "querymodel.php";
+
+    $queryModel = new QueryModel($conn);
+
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(isset($_POST['name']) && isset($_POST['email'])) {
+            
+            $name = $queryModel->sanitizeInput($_POST['name']);
+            $email = $queryModel->sanitizeInput($_POST['email']);
+
+            $queryModel->insertOpenDayForm($name, $email);
+        } 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,7 +33,6 @@
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/about') }}">About Campus</a></li>
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
-    
                 </ul>
                 <!--Phone  -->
                 <div class="mobilenav">
@@ -39,10 +55,9 @@
         <main>
             <h1>Profile of computer courses?</h1>
             <!-- Show te computer courses, Level2 and 3 CARDS find out more button refers to Tresham website -->
-            <p>asd</p>
-            <h1>Open day component</h1>
-            <h1>Open day form</h1>
-            <form action="/" method="POST">
+            
+            <h1>X and Y others are interested in this occasion.
+            <form action="#" method="POST">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <button type="submit">Submit</button>
