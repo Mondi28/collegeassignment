@@ -13,6 +13,11 @@
             $queryModel->insertOpenDayForm($name, $email);
         } 
     }
+
+    $nameAndID = $queryModel->getNameandAmount();
+    if (empty($nameAndID)) {
+        $nameAndID = [['name' => 'No one', 'id' => 0]];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +37,7 @@
                 <ul>
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/about') }}">About Campus</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    <li><a href="{{ url('/contact') }}">Assignment</a></li>
                 </ul>
                 <!--Phone  -->
                 <div class="mobilenav">
@@ -53,14 +58,51 @@
             </div>
         </header>
         <main>
-            <h1>Profile of computer courses?</h1>
+            <div class="cardcomponent">
+                <div class="card">
+                <h1>Course Title</h1>
+                    <div class="cardhr"></div>
+                    <div class="cardimg">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h1>Course Title</h1>
+                    <div class="cardhr"></div>
+
+                    <div class="cardimg">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h1>Course Title</h1>
+                    <div class="cardhr"></div>
+                    <div class="cardimg">
+                    </div>
+                </div>
+            </div>
             <!-- Show te computer courses, Level2 and 3 CARDS find out more button refers to Tresham website -->
             
-            <h1>X and Y others are interested in this occasion.
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <button type="submit">Submit</button>
+            <div class="opendayholder">
+                <div class="opendayform">
+                    <h1>Open Day Form</h1>
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="opendayinfo">
+                    <?php
+                        $firstname = strtok($nameAndID[0]['name'], " ");
+                        $others = $nameAndID[0]['id'] -1 ;
+                        echo "<h2>{$firstname}, and {$others} others are interested in the Open Day</h1>";
+                    ?>
+                </div>
+            </div>
+            <footer>
+            </footer>
+            
         </main>
     </body>
     <script src="/js/main.js"></script>

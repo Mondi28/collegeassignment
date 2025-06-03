@@ -47,7 +47,15 @@ class QueryModel {
     }
 
     public function getNameandAmount() {
-        return;
+        $stmt = $this->db->prepare("SELECT name,id FROM open_day ORDER BY ID DESC LIMIT 1");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = [];
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+        $stmt->close();
+        return $data;
     }
 }
 ?>
