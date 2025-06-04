@@ -33,7 +33,7 @@ class QueryModel {
     public function insertOpenDayForm($name, $email) {
  
         if ($this->checkEmailExists($email)) {
-            echo "Email already exists.";
+            echo "<script>alert('Email already exists. Please use a different email.');</script>";
             return;
         }
 

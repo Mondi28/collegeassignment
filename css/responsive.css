@@ -1,12 +1,15 @@
 @media screen and (max-width: 437px) { /* Mobile styles */
-    nav ul {
-        display: none;
+    nav ul li a {
+        font-size: 0.7rem;
     }
-    .mobilenav {
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
         width: 100%;
-        display: flex;
-        height: 100%;
-        align-items: center;
+        text-align: center;
+        padding: 0.5rem 0;
     }
 
     .right-animation {
@@ -30,16 +33,16 @@
         height: 50%;
         margin: 0;
     }
-    .mobilebutton {
-        width: 20%;
-        height: 100%;
+    .cardcomponent {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
     }
-    #navh1mobile {
-        font-size: 1.5rem;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        width: 80%;
-        text-align: center;
+
+    .card {
+        transform: skewX(0deg) !important;
+    }
+    .opendayform form {
+        width: 100%;
     }
 }

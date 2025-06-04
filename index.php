@@ -39,13 +39,6 @@
                     <li><a href="{{ url('/about') }}">About Campus</a></li>
                     <li><a href="{{ url('/contact') }}">Assignment</a></li>
                 </ul>
-                <!--Phone  -->
-                <div class="mobilenav">
-                    <div class="menubutton">
-                         <img src="/img/menuicon.png" height="30" onclick="showMenu()" alt="Menu Icon">
-                    </div>
-                    <h1 id="navh1mobile">Tresham College</h1>
-                </div>
             </nav>
             <div class="banner">
                 <div class="banner-img">
@@ -63,6 +56,7 @@
                 <h1>Course Title</h1>
                     <div class="cardhr"></div>
                     <div class="cardimg">
+                        <img src="img/img1.webp">
                     </div>
                 </div>
 
@@ -71,6 +65,7 @@
                     <div class="cardhr"></div>
 
                     <div class="cardimg">
+                        <img src="img/img2.webp">
                     </div>
                 </div>
 
@@ -78,6 +73,7 @@
                     <h1>Course Title</h1>
                     <div class="cardhr"></div>
                     <div class="cardimg">
+                        <img src="img/img3.webp">
                     </div>
                 </div>
             </div>
@@ -96,11 +92,13 @@
                     <?php
                         $firstname = strtok($nameAndID[0]['name'], " ");
                         $others = $nameAndID[0]['id'] -1 ;
-                        echo "<h2>{$firstname}, and {$others} others are interested in the Open Day</h1>";
+                        echo "<h2>{$firstname}, and {$others} others are interested in the Open Day event</h1>";
                     ?>
                 </div>
             </div>
             <footer>
+                <h1>bedfordcollegegroup.ac.uk</h1>
+                <p>© 2025 Tresham College. All rights reserved.</p>
             </footer>
             
         </main>
